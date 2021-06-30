@@ -2,8 +2,8 @@ import React from "react";
 
 export default function BottomMenu() {
   return (
-    <div className="alt-menu-space">
-      <div className="alt-menu">
+    <div className="bottom-menu-space">
+      <div className="bottom-menu">
         <p className="baslik1"> Hasan Ali YILDIR</p>
         <p className="baslik">
           <a href="/about">About</a>

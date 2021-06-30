@@ -1,4 +1,4 @@
-@import"https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
 * {
   padding: 0;
@@ -13,178 +13,228 @@
 
 html,
 body {
-  font-family: 'Dosis', serif;
   height: 100%;
+
 }
 
-/*en dış div*/
-.Main {
-  height: 100%;
-  left: 0;
-  right: 0;
-  max-height: 100%;
-  top: 40px;
-  display: block;
-  margin: auto;
-  bottom: 30px;
+#root {
+  display: flex;
+  background: rgb(115, 138, 254);
+  background: -moz-radial-gradient(circle, rgba(115, 138, 254, 1) 0%, rgba(255, 120, 147, 1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(115, 138, 254, 1) 0%, rgba(255, 120, 147, 1) 100%);
+  background: radial-gradient(circle, rgba(115, 138, 254, 1) 0%, rgba(255, 120, 147, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#738afe", endColorstr="#ff7893", GradientType=1);
 }
 
-/*Menü alanı*/
 .menu {
+  top: 0;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  border-bottom: 1px solid #aaa;
+  overflow: hidden;
+  background-color: #333;
+  font-family: Amatic SC, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.menu a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px 120px;
-  padding: 15px 15px 15px 15px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 100%;
+  color: #fff;
+  height: 100%;
+  transition: 500ms;
+  width: 100%;
 }
 
-/*menü içerikleri*/
-.baslik {
-  margin-left: auto;
-  padding-left: 5px;
+.menu a:hover {
+  color: #fff;
+  background-color: rgb(91, 105, 105);
+  transition: 300ms;
 }
 
-/*Menü tipi*/
-.menu p {
-  margin: 0 auto;
-  border: 0px solid #ddd;
+
+
+.sidebar {
+  width: 18%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  overflow: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+  visibility: hidden;
+  width: 5px;
+  border-radius: 10px;
+}
+
+.sidebar:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #73898f;
   border-radius: 5px;
-  padding-right: 3px;
-  padding-left: 3px;
-  font-weight: 530;
+  visibility: hidden;
 }
 
-/*Menü içi üstüne gelince*/
-.menu p a:hover {
-  color: rgb(69, 159, 233);
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-/*linkleri biçimlendir*/
-.menu a {
-  color: black;
-}
-
-.menu a:link {
-  color: #000;
-}
-
-.menu a:visited {
-  color: #000;
-}
-
-/*link biçimlendirme bitti*/
-
-/*içeriklerin en dış divi*/
-.post-place {
-  display: block;
-  padding: 10px 10px;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-  margin-bottom: 10px;
-  margin: 30px 120px;
+.side-content {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 5px;
+  max-height: 295px;
   overflow: hidden;
-  max-height: 300px;
+  margin-bottom: 15px;
+  box-shadow: 3px 3px 4px rgb(128, 125, 125);
 }
 
-/*İçerinklerin Başlığı*/
+.sidebar h2 {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  margin-top: 65px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+  color: #0a0a0a;
+  font-family: Amatic SC, cursive;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.sidebar h4 {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  justify-content: center;
+  background-color: #436279;
+  color: #ddd;
+  font-family: Amatic SC, cursive;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sidebar p {
+  padding-left: 5px;
+  background-color: #333;
+  color: #ddd;
+  padding-right: 4px;
+}
+
+.side-content:last-child {
+  margin-bottom: 20px;
+}
+
+.side-content:hover {
+  cursor: pointer;
+}
+
+
+
+.main-div-posts {
+  display: block;
+  margin: 30px;
+  width: 60%;
+  margin-top: 65px;
+  height: (100% - 65px);
+}
+
+.post-place {
+  right: 0;
+  border: 1px solid #ddd;
+  width: 50%;
+  border-radius: 6px;
+  margin: 10px;
+  -webkit-box-shadow: -9px -2px 17px -6px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: -9px -2px 17px -6px rgba(0, 0, 0, 0.55);
+  box-shadow: -9px -2px 17px -6px rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.main-div-posts:last-child {
+  margin-bottom: 40px;
+}
+
 .post-header {
   display: flex;
-  font-size: 20px;
-  font-weight: 750;
-  margin: 0 auto;
   justify-content: center;
+  font-family: Amatic SC, cursive;
+  font-size: 25px;
+  font-weight: bold;
   align-items: center;
+  padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #aaa;
-  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+
 }
 
-/*Postların içi*/
-.post-sector {
+.post-body {
+  padding: 10px;
+  overflow: hidden;
+  max-height: 295px;
+
+}
+
+
+.github-sign {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
+  flex-direction: column;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  width: 120px;
+  height: 70px;
+  max-width: 120px;
+  max-height: 70px;
   margin-bottom: 10px;
-  text-overflow: ellipsis;
-}
-
-
-.postlar {
-  display: block;
-  margin: auto;
-  margin-bottom: 40px;
-  max-width: 1000px;
-}
-
-/*Yükleniyor ifadesi*/
-.loader {
-  padding-top: 15px;
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: #666;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.date {
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-
-.alt-menu-space {
-  display: flex;
-  width: 100%;
-  align-items: center;
-}
-
-.alt-menu {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  background-color: rgb(128, 128, 128);
-  height: 60px;
-  width: 100%;
-  
-}
-
-.alt-menu p {
-  display: flex;
-  margin-left: 10px;
-}
-
-.alt-menu .baslik1{
+  margin-right: 10px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background-color: #333;
+  color: #ddd;
   font-size: 10px;
-}
-
-
-.alt-menu p a {
-  display: flex;
-  font-size: 13px;
-  font-weight: 500;
-  margin-left: 30px;
-  margin-right: 30px;
-  color: black;
-  text-overflow: ellipsis;
-}
-.alt-menu a:link {
-  color: #000;
-}
-
-.alt-menu a:visited {
-  color: #000;
-}
-
-.alt-menu p a:hover {
-  color: #fff;
   cursor: pointer;
-  transition: 0.4s;
+}
+
+.github-sign p:first-child {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.github-sign p {
+  font-size: 12px;
+}
+
+.cikis-yap a {
+  display: flex;
+  justify-content: center;
+  color: cadetblue;
+  margin-top: 5px;
+
+}
+
+.cikis-yap p {
+  display: flex;
+  justify-content: center;
+}
+
+.cikis-yap {
+  font-size: 10px;
+  margin: 5px;
+  cursor: pointer;
+  background-size: cover;
 }

@@ -5,24 +5,19 @@ import { useState } from "react";
 
 export default function Posts() {
   const postArray = [];
+  // eslint-disable-next-line array-callback-return
   Object.keys(Db).map((key) => {
     postArray.push(Db[key]);
   });
 
-  const [posts] = useState(postArray);
-
-  console.log(postArray);
+  const [posts] = useState(postArray.reverse());
 
   return (
-    <div className="postlar">
+    <div className="main-div-posts">
       {posts.map((post, key) => (
         <div className="post-place" key={key}>
-          <div className="post-header">
-            <p>{post.baslik}</p>
-          </div>
-          <div className="post-sector">
-            <p>{post.icerik}</p>
-          </div>
+          <h4 className="post-header">{post.baslik}</h4>
+          <p className="post-body">{post.icerik}</p>
         </div>
       ))}
     </div>
